@@ -1,0 +1,58 @@
+<!DOCTYPE html><html><head>
+        <title>Polymer Google Maps</title>
+        <style>
+            body {
+                font-family:Arial;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="./index.js" type="module"></script>
+        <h3>
+            The following Map Was loaded using one line of code!
+        </h3>
+        <my-google-maps id="myPolymerMap" lat="39.469489" lng="-0.376214" zoom="13"></my-google-maps>
+        
+        <h3>
+            Now, change the coordinates
+        </h3>
+        <table>
+            <tbody><tr>
+                <td>Latitude:</td>
+                <td><input type="text" id="customLat" value="50.496440"></td>
+            </tr>
+            <tr>
+                <td>Longitude:</td>
+                <td><input type="text" id="customLng" value="10.092850"></td>
+            </tr>
+            <tr>
+                <td>Zoom:</td>
+                <td><input type="text" id="customZoom" value="13"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="button" onclick="javascript:changeCoords()" value="Change Coords"></td>
+            </tr>
+        </tbody></table>
+        <div id="divInfo" style="padding:0.5em;">
+            
+        </div>
+        <script>function changeCoords() {
+  let lat = document.getElementById('customLat').value;
+  let lng = document.getElementById('customLng').value;
+  let zoom = document.getElementById('customZoom').value;
+  document.getElementById('myPolymerMap').setAttribute('lat', lat);
+  document.getElementById('myPolymerMap').setAttribute('lng', lng);
+  document.getElementById('myPolymerMap').setAttribute('zoom', zoom);
+  inform("Coordinates updated!");
+}
+
+function inform(text) {
+  document.getElementById('divInfo').innerHTML = text;
+  setTimeout(() => {
+    document.getElementById('divInfo').innerHTML = '';
+  }, 2000);
+}</script>
+        
+    
+</body></html>
