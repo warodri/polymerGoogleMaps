@@ -6,5 +6,3 @@ With Polymer I did a small script to embed a Google Maps map using one line of c
 ```              
 This line will load google maps on the given coordinates and Zoom.
 
-Check my working demo where you can see how to change coordinates by modifying this tag's attributes.
-https://www.vaskit.com/borrar/polymerGoogleMaps/build/default/
